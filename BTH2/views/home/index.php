@@ -1,11 +1,11 @@
 <?php
 include 'db.php';
 
-// Lấy danh sách category từ cơ sở dữ liệu
+
 $categories_sql = "SELECT DISTINCT category FROM articles";
 $categories_result = $conn->query($categories_sql);
 
-// Xử lý tìm kiếm và lọc theo danh mục
+
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 $category = isset($_GET['category']) ? $_GET['category'] : '';
 
