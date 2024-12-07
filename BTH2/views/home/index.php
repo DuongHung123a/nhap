@@ -7,15 +7,16 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="mb-4">Danh sách tin tức</h1>
+    <h1 class="mb-4 text-center">Danh sách Tin tức</h1>
     <div class="row">
         <?php foreach ($news as $item): ?>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="<?= $item['image'] ?>" class="card-img-top" alt="Ảnh bài viết">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="<?= $item['image'] ?>" class="card-img-top" alt="Hình ảnh tin tức">
                     <div class="card-body">
                         <h5 class="card-title"><?= $item['title'] ?></h5>
-                        <a href="index.php?action=detail&id=<?= $item['id'] ?>" class="btn btn-primary">Xem chi tiết</a>
+                        <p class="card-text"><?= substr($item['content'], 0, 100) ?>...</p>
+                        <a href="index.php?controller=news&action=detail&id=<?= $item['id'] ?>" class="btn btn-primary">Xem chi tiết</a>
                     </div>
                 </div>
             </div>
